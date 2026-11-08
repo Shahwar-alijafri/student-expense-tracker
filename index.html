@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Pocket-Money & Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>Student Budget Tracker</h2>
+      <p>Manage hostel & daily pocket expenses</p>
+    </header>
+
+    <!-- Overview Cards -->
+    <div class="cards-container">
+      <div class="card budget">
+        <h4>Monthly Budget</h4>
+        <p id="budget-display">₹5,000</p>
+      </div>
+      <div class="card expenses">
+        <h4>Total Spent</h4>
+        <p id="expense-display">₹0</p>
+      </div>
+      <div class="card balance">
+        <h4>Remaining</h4>
+        <p id="balance-display">₹5,000</p>
+      </div>
+    </div>
+
+    <!-- Alert Banner -->
+    <div id="budget-alert" class="alert hidden">
+      ⚠️ Alert: You have used over 80% of your monthly budget!
+    </div>
+
+    <!-- Main Grid: Form + Chart -->
+    <div class="main-grid">
+      <!-- Input Form -->
+      <div class="panel form-panel">
+        <h3>Add Expense</h3>
+        <form id="expense-form">
+          <div class="form-control">
+            <label for="desc">Description</label>
+            <input type="text" id="desc" placeholder="e.g. Canteen Lunch, Metro recharge" required>
+          </div>
+          <div class="form-control">
+            <label for="amount">Amount (₹)</label>
+            <input type="number" id="amount" placeholder="e.g. 150" min="1" required>
+          </div>
+          <div class="form-control">
+            <label for="category">Category</label>
+            <select id="category" required>
+              <option value="Food & Canteen">Food & Canteen</option>
+              <option value="Travel & Metro">Travel & Metro</option>
+              <option value="Stationery & Print">Stationery & Print</option>
+              <option value="Outing & Leisure">Outing & Leisure</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Add Transaction</button>
+        </form>
+      </div>
+
+      <!-- Chart Panel -->
+      <div class="panel chart-panel">
+        <h3>Category Breakdown</h3>
+        <div class="chart-wrapper">
+          <canvas id="expenseChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transactions List -->
+    <div class="panel history-panel">
+      <h3>Recent Transactions</h3>
+      <ul id="transaction-list" class="transaction-list">
+        <!-- Dynamic Items will appear here -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
