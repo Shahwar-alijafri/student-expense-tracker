@@ -5,8 +5,7 @@ A clean, responsive, and intuitive web application designed for students and hos
 ---
 
 ## 🚀 Live Demo
-🔗 **[View Live Project](https://YOUR-GITHUB-USERNAME.github.io/student-expense-tracker/)**
-
+🔗 **[View Live Project](https://shahwar-alijafri.github.io/student-expense-tracker/)**
 ---
 
 ## ✨ Features
